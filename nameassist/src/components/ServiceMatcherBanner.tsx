@@ -1,0 +1,4 @@
+/* SIRI.DEV */
+import React from 'react';
+import { Files, ArrowRight } from 'lucide-react';
+export const ServiceMatcherBanner: React.FC<{onSelectPackage:(id:string)=>void}> = () => <div className="max-w-7xl mx-auto px-5 sm:px-8 py-5"><div className="bg-[#EDF7F2] rounded-xl p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center gap-5"><Files size={44} className="text-[#006747] shrink-0"/><div className="flex-1"><h2 className="font-semibold text-xl">Not sure what service you need?</h2><p className="text-sm text-[#53645D] mt-1">Explore our services and find the right support for your next chapter.</p></div><button onClick={()=>document.getElementById('services')?.scrollIntoView({behavior:'smooth'})} className="flex items-center justify-center gap-5 bg-[#006747] text-white px-6 py-3 rounded-md text-sm font-medium">Find the Right Service <ArrowRight size={17}/></button></div></div>;

@@ -1,0 +1,4 @@
+/* SIRI.DEV */
+import React from 'react';
+import { LockKeyhole, Headset, AlarmClock, Users } from 'lucide-react';
+export const TrustBar: React.FC = () => <section id="trust" className="max-w-7xl mx-auto px-5 sm:px-8 py-7"><div className="grid grid-cols-2 lg:grid-cols-4 gap-5 lg:divide-x divide-[#006747]/10">{[[LockKeyhole,'Secure & Confidential','Your information matters to us'],[Headset,'Expert Support','Real people. Real help.'],[AlarmClock,'Fast & Reliable','Clear steps, timely updates'],[Users,'Global Access','Apply from anywhere']].map(([Icon,title,desc]) => { const Mark=Icon as typeof Users; return <div key={String(title)} className="flex items-center gap-3 lg:justify-center"><div className="p-2 rounded-lg bg-[#EDF7F2] text-[#006747]"><Mark size={23}/></div><div><h3 className="font-semibold text-sm">{String(title)}</h3><p className="text-xs text-[#53645D] mt-1">{String(desc)}</p></div></div>; })}</div></section>;

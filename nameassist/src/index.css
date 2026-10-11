@@ -1,0 +1,26 @@
+/* SIRI.DEV */
+@import "tailwindcss";
+@theme {
+  --color-ink-navy: #12352C;
+  --color-gazette-green: #006747;
+  --color-paper: #FFFFFF;
+  --color-card-sand: #EDF7F2;
+  --font-display: 'IBM Plex Sans', sans-serif;
+  --font-serif: 'IBM Plex Sans', sans-serif;
+  --font-sans: 'IBM Plex Sans', sans-serif;
+  --font-mono: 'IBM Plex Sans', sans-serif;
+}
+:root { font-family: 'IBM Plex Sans', sans-serif; color: #293B35; background: #fff; }
+body { margin: 0; line-height: 1.6; }
+h1,h2,h3,h4 { color: #102B23; }
+button,a,input,select { -webkit-tap-highlight-color: transparent; }
+button { cursor: pointer; }
+button:focus-visible,a:focus-visible { outline: 2px solid #00865c; outline-offset: 4px; }
+section[id] { scroll-margin-top: 100px; }
+.font-mono-data { font-family: 'IBM Plex Sans', sans-serif; font-variant-numeric: tabular-nums; }
+.shadow-flat,.shadow-flat-navy,.shadow-flat-green,.shadow-flat-red { box-shadow: 0 8px 32px #12352c08; border-radius: 12px; }
+.shadow-flat-sm,.shadow-flat-navy-sm { box-shadow: 0 2px 8px #12352c08; border-radius: 6px; }
+.rounded-xs { border-radius: 6px; }
+@media (prefers-reduced-motion: reduce) {
+ *,::before,::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}
