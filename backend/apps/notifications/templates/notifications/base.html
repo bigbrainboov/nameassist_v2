@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{{ subject }}</title></head>
+<body style="margin:0;padding:0;background:#F5F7F6;color:#25312E;font-family:Arial,Helvetica,sans-serif;">
+<div style="display:none;max-height:0;overflow:hidden;mso-hide:all;">{{ preheader }}</div>
+<table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#F5F7F6;"><tr><td align="center" style="padding:32px 16px;">
+<table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:600px;background:#FFFFFF;border:1px solid #E3EAE6;border-radius:12px;">
+<tr><td style="padding:32px 32px 24px;border-bottom:3px solid #D8AD35;"><img src="{{ logo_url }}" alt="NameAssist" width="180" style="display:block;width:180px;max-width:100%;height:auto;"></td></tr>
+<tr><td style="padding:36px 32px;">
+<p style="margin:0 0 14px;color:#009B6B;font-size:11px;letter-spacing:2px;font-weight:bold;">CHANGE. CORRECT. SIMPLIFY.</p>
+<h1 style="margin:0 0 24px;color:#003D35;font-size:28px;line-height:1.25;">{{ heading }}</h1>
+<p style="margin:0 0 16px;font-size:16px;line-height:1.7;">Hello {{ first_name }},</p>
+{% block content %}{% endblock %}
+{% if action_url %}<table role="presentation" cellspacing="0" cellpadding="0" style="margin-top:28px;"><tr><td bgcolor="#003D35" style="border-radius:6px;"><a href="{{ action_url }}" style="display:inline-block;padding:16px 24px;color:#FFFFFF;font-size:15px;font-weight:bold;text-decoration:none;">{{ button }}</a></td></tr></table>{% endif %}
+{% if security %}<p style="margin:24px 0 0;font-size:12px;line-height:1.6;color:#53645D;">If the button does not work, copy this link into your browser:<br><a href="{{ action_url }}" style="color:#003D35;word-break:break-all;">{{ action_url }}</a></p>{% endif %}
+</td></tr></table>
+<table role="presentation" width="100%" style="max-width:600px;"><tr><td style="padding:24px 24px 0;text-align:center;color:#53645D;font-size:12px;line-height:1.8;">Your Name. Your Identity. Our Support.<br>Need a hand? <a href="{{ support_url }}" style="color:#003D35;">Contact NameAssist</a><br>This is a service message about your NameAssist account or request.</td></tr></table>
+</td></tr></table></body></html>
+<!-- SIRI.DEV -->

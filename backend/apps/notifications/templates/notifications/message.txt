@@ -1,0 +1,18 @@
+{{ heading }}
+
+Hello {{ first_name }},
+
+{{ message }}
+{% if service %}Service: {{ service }}{% endif %}
+{% if reference %}Request reference: {{ reference }}{% endif %}
+{% if status %}Status: {{ status }}{% endif %}
+{% if amount %}Amount: {{ currency }} {{ amount }}{% endif %}
+{% if payment_reference %}Payment reference: {{ payment_reference }}{% endif %}
+{% if date %}Date: {{ date }}{% endif %}
+{% if description %}{{ description }}{% endif %}
+{% if awaiting_payment %}Complete payment from your dashboard so our team can begin reviewing your request.{% endif %}
+{% if action_url %}{{ button }}: {{ action_url }}{% endif %}
+
+NameAssist — Your Name. Your Identity. Our Support.
+Need a hand? {{ support_url }}
+# SIRI.DEV

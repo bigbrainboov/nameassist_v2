@@ -1,0 +1,62 @@
+# Add this service to render.yaml when ready to provision a paid worker.
+# Keep exactly one instance when using embedded beat (-B).
+- type: worker
+  name: nameassist-email-worker
+  runtime: python
+  rootDir: backend
+  plan: 0.5c-512mb
+  numInstances: 1
+  buildCommand: pip install 'poetry>=2.0.0' && poetry config virtualenvs.create false && poetry install --only main --no-interaction --no-ansi --no-root
+  startCommand: celery -A config worker -B -l info --concurrency=2 --schedule=/tmp/nameassist-celerybeat
+  envVars:
+    - key: DATABASE_URL
+      fromDatabase:
+        name: nameassist-db
+        property: connectionString
+    - key: REDIS_URL
+      fromService:
+        type: redis
+        name: nameassist-redis
+        property: connectionString
+    - key: DJANGO_SETTINGS_MODULE
+      value: config.settings.production
+    - key: DEBUG
+      value: "False"
+    - key: SECRET_KEY
+      fromService:
+        type: web
+        name: nameassist-api
+        envVarKey: SECRET_KEY
+    - key: EMAIL_PAYLOAD_ENCRYPTION_KEY
+      fromService:
+        type: web
+        name: nameassist-api
+        envVarKey: EMAIL_PAYLOAD_ENCRYPTION_KEY
+    - key: RESEND_API_KEY
+      fromService:
+        type: web
+        name: nameassist-api
+        envVarKey: RESEND_API_KEY
+    - key: EMAIL_DELIVERY_MODE
+      fromService:
+        type: web
+        name: nameassist-api
+        envVarKey: EMAIL_DELIVERY_MODE
+    - key: DEFAULT_FROM_EMAIL
+      fromService:
+        type: web
+        name: nameassist-api
+        envVarKey: DEFAULT_FROM_EMAIL
+    - key: EMAIL_REPLY_TO
+      fromService:
+        type: web
+        name: nameassist-api
+        envVarKey: EMAIL_REPLY_TO
+    - key: FRONTEND_URL
+      fromService:
+        type: web
+        name: nameassist-api
+        envVarKey: FRONTEND_URL
+    - key: PYTHON_VERSION
+      value: "3.12.0"
+# SIRI.DEV

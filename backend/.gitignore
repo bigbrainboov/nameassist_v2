@@ -1,0 +1,6 @@
+**/*.pyc
+__pycache__/
+.env
+
+private_uploads/
+# SIRI.DEV
